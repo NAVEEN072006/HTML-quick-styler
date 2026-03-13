@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .portfolio {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .item {
+            background: #ffffff;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            width: calc(33% - 40px);
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #35424a;
+            color: white;
+        }
+        @media (max-width: 768px) {
+            .item {
+                width: calc(50% - 40px);
+            }
+        }
+        @media (max-width: 480px) {
+            .item {
+                width: calc(100% - 40px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Food Delivery Portfolio</h1>
+        <p>Showcasing our top food delivery projects.</p>
+    </header>
+    <div class="portfolio">
+        <div class="item">
+            <h2>Project One</h2>
+            <p>A brief description of project one. We delivered this project in record time.</p>
+        </div>
+        <div class="item">
+            <h2>Project Two</h2>
+            <p>A short overview of project two. This project was a huge success.</p>
+        </div>
+        <div class="item">
+            <h2>Project Three</h2>
+            <p>A glimpse of project three, which received positive feedback.</p>
+        </div>
+        <div class="item">
+            <h2>Project Four</h2>
+            <p>Details about project four. Our team went above and beyond.</p>
+        </div>
+    </div>
+    <footer>
+        <p>© 2026 Food Delivery Portfolio. All rights reserved.</p>
+    </footer>
+</body>
+</html>
