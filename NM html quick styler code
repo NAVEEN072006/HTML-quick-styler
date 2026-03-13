@@ -1,0 +1,90 @@
+                    label="Choose Style"
+                )
+                palette_btn = gr.Button("🎨 Get Palette", size="lg", variant="primary")
+            palette_display = gr.Markdown()
+            palette_btn.click(
+                get_color_suggestions,
+                inputs=[style_selector],
+                outputs=[palette_display]
+            )
+        # ============= TAB 4: Templates =============
+        with gr.TabItem("📋 Templates"):
+            gr.Markdown("### 📝 Quick Templates")
+            with gr.Row():
+                with gr.Column():
+                    gr.Markdown("""
+                    #### Portfolio Website
+                    Hero, Portfolio Gallery, About, Contact, Footer
+                    """)
+                    portfolio_btn = gr.Button("Use Template", size="sm")
+                    def load_portfolio():
+                        return ("Portfolio Website",
+                               "Hero section with welcome banner, portfolio gallery with 6 items, about section, testimonials, contact form, footer",
+                               "modern")
+                    portfolio_btn.click(load_portfolio, outputs=[page_title, page_description, color_style])
+                with gr.Column():
+                    gr.Markdown("""
+                    #### SaaS Landing Page
+                    Hero, Features, Pricing, Testimonials, CTA, Footer
+                    """)
+                    saas_btn = gr.Button("Use Template", size="sm")
+                    def load_saas():
+                        return ("SaaS Product",
+                               "Hero banner, features showcase with 3 items, pricing plans comparison, testimonials, call-to-action button, footer",
+                               "vibrant")
+                    saas_btn.click(load_saas, outputs=[page_title, page_description, color_style])
+                with gr.Column():
+                    gr.Markdown("""
+                    #### Company Website
+                    Header, About, Services, Team, Contact, Footer
+                    """)
+                    company_btn = gr.Button("Use Template", size="sm")
+                    def load_company():
+                        return ("Company",
+                               "Header with navigation, hero section, about company, services list, team members, contact form, footer",
+                               "ocean")
+                    company_btn.click(load_company, outputs=[page_title, page_description, color_style])
+        # ============= TAB 5: Guide =============
+        with gr.TabItem("📚 Guide"):
+            gr.Markdown("""
+            # 📖 HTML Quick-Styler Guide
+            ## How It Works
+            ### 1. Enter Details
+            - **Title:** Page name
+            - **Description:** Sections you want
+            - **Color Style:** Pick a theme
+            ### 2. Automatic Detection
+            The tool recognizes these keywords:
+            - `hero` / `banner` → Hero Section
+            - `features` / `services` → Features Grid
+            - `about` / `team` → About Section
+            - `portfolio` / `gallery` → Portfolio
+            - `testimonial` / `reviews` → Testimonials
+            - `pricing` / `plans` → Pricing Plans
+            - `contact` / `form` → Contact Form
+            - `footer` → Footer
+            ### 3. Generate & Customize
+            - Copy generated HTML
+            - Edit text and colors
+            - Save as .html file
+            - Open in browser
+            ## Features
+            ✅ Responsive design
+            ✅ Modern animations
+            ✅ SEO meta tags
+            ✅ Professional styling
+            ✅ Dark theme
+            ✅ Color palettes
+            ✅ Copy-paste ready
+            ## Color Styles
+            - **Modern:** Professional blues
+            - **Vibrant:** Bold reds
+            - **Ocean:** Calm blues
+            - **Forest:** Natural greens
+            - **Sunset:** Warm oranges
+            - **Luxury:** Elegant blacks
+            - **Creative:** Purple artistic
+            - **Minimal:** Clean grays
+            """)
+print("\n✅ HTML Quick-Styler Advanced Ready!\n")
+demo.launch(share=True, show_error=True, show_api=False)
